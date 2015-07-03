@@ -40,7 +40,7 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-					<finalName>outlierasm</finalName>
+					<finalName>instantreloader</finalName>
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
@@ -68,7 +68,7 @@
 							<relocations>
 								<relocation>
 									<pattern>org.objectweb</pattern>
-									<shadedPattern>org.outlier.thirdparty.org.objectweb</shadedPattern>
+									<shadedPattern>org.lftechnology.outlier.thirdparty.org.objectweb</shadedPattern>
 								</relocation>
 							</relocations>
 						</configuration>
