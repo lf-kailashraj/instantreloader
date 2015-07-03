@@ -135,6 +135,12 @@ public class Agent {
 		});
 	}
 	
+	public static void addClassLoader(ClassLoader c) {
+		if (!classLoaders.contains(c)) {
+			classLoaders.add(c);
+		}
+	}
+	
 	
 	/**
 	 * 

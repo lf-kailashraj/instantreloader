@@ -19,7 +19,7 @@ public class InstantTransformer implements ClassFileTransformer {
 	private String classLoaderName;
 
 	static {
-		System.out.println("MegaLoader: Class loader transformer initialized.");
+		System.out.println("InstantLoader: Class loader transformer initialized.");
 	}
 
 	public InstantTransformer(String classLoaderName) {
@@ -36,7 +36,7 @@ public class InstantTransformer implements ClassFileTransformer {
 						classfileBuffer));
 				CtConstructor cts[] = klass.getConstructors();
 				for (CtConstructor c : cts) {
-					c.insertBeforeBody("com.outliers.app.reloader.MegaLoader.addClassLoader(this);");
+					c.insertBeforeBody("org.lftechnology.outlier.instantreloader.Agent.addClassLoader(this);");
 				}
 
 				byte[] b = klass.toBytecode();
