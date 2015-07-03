@@ -1,18 +1,16 @@
 package org.lftechnology.outlier.instantreloader;
 
-import org.lftechnology.outlier.instantreloader.adapters.AddClassReloaderAdapter;
-import org.lftechnology.outlier.instantreloader.adapters.AddFieldsHolderAdapter;
-import org.lftechnology.outlier.instantreloader.adapters.BeforeMethodCheckAdapter;
-import org.lftechnology.outlier.instantreloader.adapters.ClinitClassAdapter;
-import org.lftechnology.outlier.instantreloader.adapters.FieldTransformAdapter;
+import org.lftechnology.outlier.instantreloader.adapter.AddClassReloaderAdapter;
+import org.lftechnology.outlier.instantreloader.adapter.AddFieldsHolderAdapter;
+import org.lftechnology.outlier.instantreloader.adapter.BeforeMethodCheckAdapter;
+import org.lftechnology.outlier.instantreloader.adapter.ClinitClassAdapter;
+import org.lftechnology.outlier.instantreloader.adapter.FieldTransformAdapter;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class ClassTransformer {
+
 	public static byte[] transform(Long classReloaderManagerIndex,
 			Long classReloaderIndex, byte[] classFile) {
 		System.out.println("Transform " + classReloaderManagerIndex + " - "

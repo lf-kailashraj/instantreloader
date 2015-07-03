@@ -3,12 +3,10 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class Constants {
-	public static final String FIELD_DELIMITER = "-";
 
+	public static final String FIELD_DELIMITER = "-";
+	
 	public static final String OUTLIER_INSTANCE_FIELDS = "__outlier_instance_fields__";
 	// The field name of the field which is used for class reload.
 	public static final String OUTLIER_CLASS_RELOADER_FIELDS = "__outlier_class_reloader_field__";

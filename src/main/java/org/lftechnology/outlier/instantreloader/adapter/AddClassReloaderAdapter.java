@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
 import java.lang.reflect.Modifier;
 
@@ -8,9 +8,6 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class AddClassReloaderAdapter extends ClassVisitor {
 
 	public AddClassReloaderAdapter(ClassVisitor cv) {

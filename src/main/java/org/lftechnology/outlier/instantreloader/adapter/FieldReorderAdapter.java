@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
 import java.util.Set;
 

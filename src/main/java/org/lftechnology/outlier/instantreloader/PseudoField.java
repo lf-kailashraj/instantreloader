@@ -1,9 +1,9 @@
 package org.lftechnology.outlier.instantreloader;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
+import org.apache.commons.lang.StringUtils;
+
 public class PseudoField implements java.lang.Comparable {
+
 	private int access;
 	private String name;
 	private String desc;
@@ -41,13 +41,12 @@ public class PseudoField implements java.lang.Comparable {
 	@Override
 	public boolean equals(Object o) {
 		return (o instanceof PseudoField)
-				&& (this.toString().equals(o.toString()));
+				&& StringUtils.equals(this.toString(), o.toString());
 	}
 
 	@Override
 	public String toString() {
-		return Constants.FIELD_DELIMITER + name + Constants.FIELD_DELIMITER
-				+ name;
+		return Constants.FIELD_DELIMITER + name + Constants.FIELD_DELIMITER + name;
 	}
 
 	public int compareTo(Object o) {

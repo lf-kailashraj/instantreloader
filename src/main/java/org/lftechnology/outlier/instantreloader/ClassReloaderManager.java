@@ -3,10 +3,8 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class ClassReloaderManager {
+
 	private ClassLoader classLoader;
 	private Long counter = 0L;
 

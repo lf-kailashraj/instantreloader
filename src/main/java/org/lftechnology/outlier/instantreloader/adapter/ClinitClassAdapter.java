@@ -1,5 +1,6 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
+import org.apache.commons.lang.StringUtils;
 import org.lftechnology.outlier.instantreloader.AsmInjector;
 import org.lftechnology.outlier.instantreloader.Constants;
 import org.lftechnology.outlier.instantreloader.PseudoMethod;
@@ -8,11 +9,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
-// Add "<clinit>" to class if not exist, or else transform the "<clinit>"
-// methods. Add all the code in "<clinit>" to
+//Add "<clinit>" to class if not exist, or else transform the "<clinit>" methods. Add all the code in "<clinit>" to
 // Constants#OUTLIER_CLINIT_METHOD_NAME to class reinitialization.
 public class ClinitClassAdapter extends ClassVisitor {
 
@@ -38,7 +35,7 @@ public class ClinitClassAdapter extends ClassVisitor {
 	@Override
 	public MethodVisitor visitMethod(int access, String name, String desc,
 			String signature, String[] exceptions) {
-		if (name.equals("<clinit>")) {
+		if (StringUtils.equals(name, "<clinit>")) {
 			clinitMethod = new PseudoMethod(access, name, desc, signature,
 					exceptions);
 			MethodVisitor mv = super.visitMethod(access | Opcodes.ACC_PUBLIC,

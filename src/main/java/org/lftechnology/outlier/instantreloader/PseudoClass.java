@@ -3,10 +3,8 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.Set;
 import java.util.TreeSet;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class PseudoClass {
+
 	private String className;
 	private Set<PseudoField> fields = new TreeSet<PseudoField>();
 

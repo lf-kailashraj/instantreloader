@@ -1,13 +1,11 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
+import org.apache.commons.lang.StringUtils;
 import org.lftechnology.outlier.instantreloader.AsmInjector;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class BeforeMethodCheckAdapter extends ClassVisitor {
 
 	private String classInternalName;
@@ -29,7 +27,7 @@ public class BeforeMethodCheckAdapter extends ClassVisitor {
 		MethodVisitor mv = super.visitMethod(access, name, desc, signature,
 				exceptions);
 
-		if (name.equals("<clinit>")) {
+		if (StringUtils.equals(name, "<clinit>")) {
 			return mv;
 		}
 

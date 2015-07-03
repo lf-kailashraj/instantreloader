@@ -8,9 +8,6 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.GeneratorAdapter;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class AsmInjector {
 
 	// Init static fields in method "<clinit>", should insert this code fragment
@@ -27,8 +24,8 @@ public class AsmInjector {
 
 		mv.visitLdcInsn(classReloaderManagerIndex);
 		mv.visitMethodInsn(Opcodes.INVOKESTATIC, Type
-				.getInternalName(InstantReloader.class),
-				"getClassReloaderManager", Type.getMethodDescriptor(
+				.getInternalName(Outlier.class), "getClassReloaderManager",
+				Type.getMethodDescriptor(
 						Type.getType(ClassReloaderManager.class),
 						Type.LONG_TYPE));
 		mv.visitLdcInsn(classReloaderIndex);

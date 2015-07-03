@@ -3,10 +3,8 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
-public class InstantReloader {
+public class Outlier {
+
 	private static Long counter = 0L;
 	private static Map<ClassLoader, Long> classLoaderIndexMap = new HashMap<ClassLoader, Long>();
 	private static Map<Long, ClassReloaderManager> classReloaderManagerMap = new HashMap<Long, ClassReloaderManager>();

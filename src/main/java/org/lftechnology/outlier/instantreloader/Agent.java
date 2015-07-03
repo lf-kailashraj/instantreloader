@@ -13,12 +13,9 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Type;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class Agent {
 	public static void premain(String agentArgs, Instrumentation inst) {
-		InstantRedefiner.setInstrumentation(inst);
+		ClassRedefiner.setInstrumentation(inst);
 
 		InputStream is = ClassLoader.getSystemResourceAsStream(Type
 				.getInternalName(ClassLoader.class) + ".class");
@@ -46,10 +43,6 @@ public class Agent {
 				e.printStackTrace();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
-		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

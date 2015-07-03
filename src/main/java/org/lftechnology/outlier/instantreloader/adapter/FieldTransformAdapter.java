@@ -1,11 +1,11 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
 import org.lftechnology.outlier.instantreloader.AsmInjector;
 import org.lftechnology.outlier.instantreloader.ClassReloader;
 import org.lftechnology.outlier.instantreloader.ClassReloaderManager;
 import org.lftechnology.outlier.instantreloader.Constants;
 import org.lftechnology.outlier.instantreloader.FieldsHolder;
-import org.lftechnology.outlier.instantreloader.InstantReloader;
+import org.lftechnology.outlier.instantreloader.Outlier;
 import org.lftechnology.outlier.instantreloader.PseudoClass;
 import org.lftechnology.outlier.instantreloader.PseudoField;
 import org.objectweb.asm.ClassVisitor;
@@ -15,9 +15,6 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.GeneratorAdapter;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class FieldTransformAdapter extends ClassVisitor {
 
 	private ClassReloaderManager classReloaderManager;
@@ -27,7 +24,7 @@ public class FieldTransformAdapter extends ClassVisitor {
 	public FieldTransformAdapter(ClassVisitor cv,
 			long classReloaderManagerIndex, long classReloaderIndex) {
 		super(Opcodes.ASM4, cv);
-		classReloaderManager = InstantReloader
+		classReloaderManager = Outlier
 				.getClassReloaderManager(classReloaderManagerIndex);
 		classReloader = classReloaderManager
 				.getClassReloader(classReloaderIndex);

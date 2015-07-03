@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader.adapters;
+package org.lftechnology.outlier.instantreloader.adapter;
 
 import org.lftechnology.outlier.instantreloader.PseudoClass;
 import org.lftechnology.outlier.instantreloader.PseudoField;
@@ -6,9 +6,6 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Opcodes;
 
-/**
- * @author Kailash Bijayananda <fried.dust@gmail.com>
- */
 public class ClassInfoCollectAdapter extends ClassVisitor {
 
 	private PseudoClass hotCodeClass;
