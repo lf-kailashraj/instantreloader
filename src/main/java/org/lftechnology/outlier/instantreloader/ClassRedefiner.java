@@ -4,6 +4,11 @@ import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassRedefiner {
 
 	private static Instrumentation inst;

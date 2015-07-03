@@ -3,6 +3,11 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassReloaderManager {
 
 	private ClassLoader classLoader;

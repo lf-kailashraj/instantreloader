@@ -3,6 +3,11 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class Constants {
 
 	public static final String FIELD_DELIMITER = "-";

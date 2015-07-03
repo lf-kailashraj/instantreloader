@@ -8,6 +8,11 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.GeneratorAdapter;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class AsmInjector {
 
 	// Init static fields in method "<clinit>", should insert this code fragment

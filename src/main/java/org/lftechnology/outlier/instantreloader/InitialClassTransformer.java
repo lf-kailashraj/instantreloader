@@ -13,6 +13,11 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class InitialClassTransformer {
 
 	private static final String[] IGNORE_PACKAGE = { "java", "sun" };

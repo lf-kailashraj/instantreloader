@@ -3,6 +3,11 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class PseudoClass {
 
 	private String className;

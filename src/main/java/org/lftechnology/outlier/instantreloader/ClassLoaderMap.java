@@ -1,5 +1,10 @@
 package org.lftechnology.outlier.instantreloader;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassLoaderMap {
 	private ClassLoader classLoader;
 	private ClassReloaderManager classReloaderManager;

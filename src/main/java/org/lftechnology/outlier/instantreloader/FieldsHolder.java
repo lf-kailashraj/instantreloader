@@ -3,6 +3,11 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class FieldsHolder {
 
     private Map<String, Object> fields = new HashMap<String, Object>();

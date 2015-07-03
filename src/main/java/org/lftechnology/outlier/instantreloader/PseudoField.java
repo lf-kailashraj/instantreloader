@@ -2,6 +2,11 @@ package org.lftechnology.outlier.instantreloader;
 
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class PseudoField implements java.lang.Comparable {
 
 	private int access;

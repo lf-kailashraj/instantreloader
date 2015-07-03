@@ -13,6 +13,11 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Type;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class Agent {
 	public static void premain(String agentArgs, Instrumentation inst) {
 		ClassRedefiner.setInstrumentation(inst);

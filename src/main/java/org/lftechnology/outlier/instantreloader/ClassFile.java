@@ -5,6 +5,11 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassFile {
 	protected Long version = 0L;
 

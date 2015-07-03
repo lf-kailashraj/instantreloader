@@ -7,6 +7,11 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassLoaderAdapter extends ClassVisitor {
 
 	public ClassLoaderAdapter(ClassVisitor cv) {

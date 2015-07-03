@@ -3,6 +3,11 @@ package org.lftechnology.outlier.instantreloader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 
+ * @author frieddust
+ *
+ */
 public class ClassReloader {
 
 	private Long classReloaderManagerIndex;
