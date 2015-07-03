@@ -3,6 +3,7 @@ package org.lftechnology.outlier.instantreloader.adapters;
 import java.lang.reflect.Modifier;
 
 import org.lftechnology.outlier.instantreloader.Constants;
+import org.lftechnology.outlier.instantreloader.FieldsHolder;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;

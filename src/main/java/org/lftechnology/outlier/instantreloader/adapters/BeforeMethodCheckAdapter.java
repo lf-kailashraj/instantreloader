@@ -1,5 +1,6 @@
 package org.lftechnology.outlier.instantreloader.adapters;
 
+import org.lftechnology.outlier.instantreloader.AsmInjector;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -28,7 +29,7 @@ public class BeforeMethodCheckAdapter extends ClassVisitor {
 		MethodVisitor mv = super.visitMethod(access, name, desc, signature,
 				exceptions);
 
-		if (StringUtils.equals(name, "<clinit>")) {
+		if (name.equals("<clinit>")) {
 			return mv;
 		}
 

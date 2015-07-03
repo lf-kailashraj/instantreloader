@@ -41,7 +41,7 @@ public class PseudoField implements java.lang.Comparable {
 	@Override
 	public boolean equals(Object o) {
 		return (o instanceof PseudoField)
-				&& StringUtils.equals(this.toString(), o.toString());
+				&& (this.toString().equals(o.toString()));
 	}
 
 	@Override

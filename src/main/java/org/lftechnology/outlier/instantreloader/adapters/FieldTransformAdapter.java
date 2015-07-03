@@ -1,8 +1,10 @@
 package org.lftechnology.outlier.instantreloader.adapters;
 
+import org.lftechnology.outlier.instantreloader.AsmInjector;
 import org.lftechnology.outlier.instantreloader.ClassReloader;
 import org.lftechnology.outlier.instantreloader.ClassReloaderManager;
 import org.lftechnology.outlier.instantreloader.Constants;
+import org.lftechnology.outlier.instantreloader.FieldsHolder;
 import org.lftechnology.outlier.instantreloader.InstantReloader;
 import org.lftechnology.outlier.instantreloader.PseudoClass;
 import org.lftechnology.outlier.instantreloader.PseudoField;
