@@ -1,0 +1,2 @@
+Premain-class: org.lftechnology.outlier.instantreloader.InstantLoader
+Can-Redefine-Classes: true
