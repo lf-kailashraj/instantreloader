@@ -72,7 +72,7 @@
 							<relocations>
 								<relocation>
 									<pattern>org.objectweb</pattern>
-									<shadedPattern>org.outlier.thirdparty.org.objectweb</shadedPattern>
+									<shadedPattern>org.lftechnology.outlier.thirdparty.org.objectweb</shadedPattern>
 								</relocation>
 							</relocations>
 						</configuration>
