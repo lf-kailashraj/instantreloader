@@ -4,6 +4,9 @@ import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 
+/**
+ * @author Kailash Bijayananda <fried.dust@gmail.com>
+ */
 public class InstantRedefiner {
 	private static Instrumentation instrumentation;
 
