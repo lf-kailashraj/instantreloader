@@ -7,7 +7,7 @@ import java.lang.instrument.Instrumentation;
  * @author anish
  *
  */
-public class InstantLoader {
+public class Agent {
 	
 	public static void premain(String agentArgs, Instrumentation inst) {
 		
