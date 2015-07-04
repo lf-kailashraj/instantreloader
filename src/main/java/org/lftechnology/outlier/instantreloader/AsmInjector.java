@@ -10,9 +10,6 @@ import org.objectweb.asm.commons.GeneratorAdapter;
 
 public class AsmInjector {
 
-	// Init static fields in method "<clinit>", should insert this code fragment
-	// at the start of "<clinit>".
-
 	public static void clinitFieldInit(MethodVisitor mv,
 			String ownerClassInternalName, Long classReloaderManagerIndex,
 			Long classReloaderIndex) {

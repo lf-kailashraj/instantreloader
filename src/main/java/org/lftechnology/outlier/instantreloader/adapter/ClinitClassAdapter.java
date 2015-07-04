@@ -9,8 +9,6 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-//Add "<clinit>" to class if not exist, or else transform the "<clinit>" methods. Add all the code in "<clinit>" to
-// Constants#OUTLIER_CLINIT_METHOD_NAME to class reinitialization.
 public class ClinitClassAdapter extends ClassVisitor {
 
 	private PseudoMethod clinitMethod;

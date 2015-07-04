@@ -18,7 +18,6 @@ public class AddFieldsHolderAdapter extends ClassVisitor {
 	public void visit(int version, int access, String name, String signature,
 			String superName, String[] interfaces) {
 
-		// Interfaces don't have any instances field.
 		if (!Modifier.isInterface(access)) {
 			cv.visitField(Opcodes.ACC_PUBLIC,
 					Constants.OUTLIER_INSTANCE_FIELDS,

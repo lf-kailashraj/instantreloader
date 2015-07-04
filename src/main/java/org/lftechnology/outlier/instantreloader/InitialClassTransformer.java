@@ -17,8 +17,6 @@ public class InitialClassTransformer {
 
 	private static final String[] IGNORE_PACKAGE = { "java", "sun" };
 
-	// Invoked everytime a new class is loaded.
-
 	public static byte[] transform(String className, ClassLoader classLoader,
 			byte[] classfileBuffer) {
 		System.out.println("NEW LOAD " + className);
