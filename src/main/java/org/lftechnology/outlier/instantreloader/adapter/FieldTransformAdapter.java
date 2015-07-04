@@ -21,8 +21,7 @@ public class FieldTransformAdapter extends ClassVisitor {
 	private ClassReloader classReloader;
 	private PseudoClass originClass;
 
-	public FieldTransformAdapter(ClassVisitor cv,
-			long classReloaderManagerIndex, long classReloaderIndex) {
+	public FieldTransformAdapter(ClassVisitor cv,long classReloaderManagerIndex, long classReloaderIndex) {
 		super(Opcodes.ASM4, cv);
 		classReloaderManager = Outlier
 				.getClassReloaderManager(classReloaderManagerIndex);
@@ -32,8 +31,7 @@ public class FieldTransformAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public FieldVisitor visitField(int access, String name, String desc,
-			String signature, Object value) {
+	public FieldVisitor visitField(int access, String name, String desc, String signature, Object value) {
 		return null;
 	}
 

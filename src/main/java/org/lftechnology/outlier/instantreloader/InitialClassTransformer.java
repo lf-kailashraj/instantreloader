@@ -33,18 +33,15 @@ public class InitialClassTransformer {
 		Long classReloaderManagerIndex = Outlier.getIndex(classLoader);
 
 		if (classReloaderManagerIndex == null) {
-			classReloaderManagerIndex = Outlier.putClassReloaderManager(
-					classLoader, new ClassReloaderManager(classLoader));
+			classReloaderManagerIndex = Outlier.putClassReloaderManager(classLoader, new ClassReloaderManager(classLoader));
 		}
 
-		ClassReloaderManager classReloaderManager = Outlier
-				.getClassReloaderManager(classReloaderManagerIndex);
+		ClassReloaderManager classReloaderManager = Outlier.getClassReloaderManager(classReloaderManagerIndex);
 
 		Long classReloaderIndex = classReloaderManager.getIndex(className
 				.replace('.', '/'));
 
-		URL classFileURL = classLoader.getResource(className.replace('.', '/')
-				+ ".class");
+		URL classFileURL = classLoader.getResource(className.replace('.', '/')+ ".class");
 		File classFile = new File(classFileURL.getFile());
 
 		if (!classFile.exists()) {
@@ -57,20 +54,16 @@ public class InitialClassTransformer {
 
 		if (classReloaderIndex == null) {
 			classReloaderIndex = classReloaderManager.getNextAvailableIndex();
-			classReloaderManager.putClassReloader(classReloaderIndex, className
-					.replace('.', '/'), new ClassReloader(
-					classReloaderManagerIndex, classReloaderIndex,
-					fileSystemVersionedClassFile, pseudoClass, classLoader));
+			classReloaderManager.putClassReloader(classReloaderIndex, className.replace('.', '/'), new ClassReloader(
+					classReloaderManagerIndex, classReloaderIndex, fileSystemVersionedClassFile, pseudoClass, classLoader));
 		}
 
-		ClassReader cr = new ClassReader(classfileBuffer);
-		ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS
-				+ ClassWriter.COMPUTE_FRAMES);
+		ClassReader cr = new ClassReader(classfileBuffer); 
+		ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS + ClassWriter.COMPUTE_FRAMES);
 		ClassVisitor cv = new AddFieldsHolderAdapter(cw);
 		cv = new AddClassReloaderAdapter(cv);
 		cv = new FieldReorderAdapter(pseudoClass, cv);
-		cv = new ClinitClassAdapter(cv, classReloaderManagerIndex,
-				classReloaderIndex);
+		cv = new ClinitClassAdapter(cv, classReloaderManagerIndex, classReloaderIndex);
 		cv = new BeforeMethodCheckAdapter(cv);
 		cv = new ClassInfoCollectAdapter(cv, pseudoClass);
 		cr.accept(cv, 0);

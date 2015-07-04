@@ -26,13 +26,13 @@ public class ClassReloader {
 	}
 
 	public boolean checkAndReload() {
-		try{
+		try {
 			return classFile.changed() && reload();
-		}catch(Exception ex){
+		} catch (Exception ex) {
 			System.err.println("Check and reload");
 			return false;
 		}
-		
+
 	}
 
 	public PseudoClass getOriginClass() {

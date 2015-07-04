@@ -17,9 +17,9 @@ public class ClassRedefiner {
 		try {
 			inst.redefineClasses(new ClassDefinition(klass, classFile));
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.err.println("ClassNotFoundException : " + e);
 		} catch (UnmodifiableClassException e) {
-			e.printStackTrace();
+			System.err.println("UnmodifiableClassException : " + e);
 		}
 	}
 }

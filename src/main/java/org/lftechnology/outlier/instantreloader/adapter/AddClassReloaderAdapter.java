@@ -15,8 +15,7 @@ public class AddClassReloaderAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public void visit(int version, int access, String name, String signature,
-			String superName, String[] interfaces) {
+	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 		if (!Modifier.isInterface(access)) {
 			cv.visitField(Opcodes.ACC_PUBLIC + Opcodes.ACC_STATIC,
 					Constants.OUTLIER_CLASS_RELOADER_FIELDS,

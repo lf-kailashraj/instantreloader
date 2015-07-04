@@ -19,8 +19,7 @@ public class Outlier {
 		return classReloaderManagerMap.get(index);
 	}
 
-	public static Long putClassReloaderManager(ClassLoader classLoader,
-			ClassReloaderManager classReloaderManager) {
+	public static Long putClassReloaderManager(ClassLoader classLoader, ClassReloaderManager classReloaderManager) {
 		counter++;
 		classLoaderIndexMap.put(classLoader, counter);
 		classReloaderManagerMap.put(counter, classReloaderManager);

@@ -18,8 +18,7 @@ public class FieldReorderAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public FieldVisitor visitField(int access, String name, String desc,
-			String signature, Object value) {
+	public FieldVisitor visitField(int access, String name, String desc, String signature, Object value) {
 		return null;
 	}
 
@@ -28,8 +27,7 @@ public class FieldReorderAdapter extends ClassVisitor {
 		Set<PseudoField> fields = hotCodeClass.getFields();
 
 		for (PseudoField field : fields) {
-			cv.visitField(field.getAccess(), field.getName(), field.getDesc(),
-					null, null);
+			cv.visitField(field.getAccess(), field.getName(), field.getDesc(), null, null);
 		}
 
 		super.visitEnd();

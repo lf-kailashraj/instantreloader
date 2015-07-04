@@ -16,8 +16,7 @@ public class ClassInfoCollectAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public void visit(int version, int access, String name, String signature,
-			String superName, String[] interfaces) {
+	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 		hotCodeClass.setClassName(name.replace('/', '.'));
 		super.visit(version, access, name, signature, superName, interfaces);
 	}

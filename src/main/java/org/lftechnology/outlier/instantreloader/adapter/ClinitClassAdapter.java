@@ -16,8 +16,7 @@ public class ClinitClassAdapter extends ClassVisitor {
 	private Long classReloaderManagerIndex;
 	private Long classReloaderIndex;
 
-	public ClinitClassAdapter(ClassVisitor cv, Long classReloaderManagerIndex,
-			Long classReloaderIndex) {
+	public ClinitClassAdapter(ClassVisitor cv, Long classReloaderManagerIndex, Long classReloaderIndex) {
 		super(Opcodes.ASM4, cv);
 		this.classReloaderManagerIndex = classReloaderManagerIndex;
 		this.classReloaderIndex = classReloaderIndex;

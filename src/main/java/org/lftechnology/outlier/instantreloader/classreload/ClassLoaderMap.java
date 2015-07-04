@@ -4,8 +4,7 @@ public class ClassLoaderMap {
 	private ClassLoader classLoader;
 	private ClassReloaderManager classReloaderManager;
 
-	public ClassLoaderMap(ClassLoader classLoader,
-			ClassReloaderManager classReloaderManager) {
+	public ClassLoaderMap(ClassLoader classLoader, ClassReloaderManager classReloaderManager) {
 		this.classLoader = classLoader;
 		this.classReloaderManager = classReloaderManager;
 	}
