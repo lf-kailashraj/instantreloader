@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.data;
 
 import java.util.HashMap;
 import java.util.Map;

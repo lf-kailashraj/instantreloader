@@ -2,8 +2,8 @@ package org.lftechnology.outlier.instantreloader.adapter;
 
 import java.lang.reflect.Modifier;
 
-import org.lftechnology.outlier.instantreloader.Constants;
-import org.lftechnology.outlier.instantreloader.FieldsHolder;
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.FieldsHolder;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
@@ -15,10 +15,8 @@ public class AddFieldsHolderAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public void visit(int version, int access, String name, String signature,
-			String superName, String[] interfaces) {
+	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 
-		// Interfaces don't have any instances field.
 		if (!Modifier.isInterface(access)) {
 			cv.visitField(Opcodes.ACC_PUBLIC,
 					Constants.OUTLIER_INSTANCE_FIELDS,

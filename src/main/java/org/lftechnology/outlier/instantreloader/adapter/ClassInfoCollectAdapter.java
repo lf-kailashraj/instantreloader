@@ -1,7 +1,7 @@
 package org.lftechnology.outlier.instantreloader.adapter;
 
-import org.lftechnology.outlier.instantreloader.PseudoClass;
 import org.lftechnology.outlier.instantreloader.PseudoField;
+import org.lftechnology.outlier.instantreloader.data.PseudoClass;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Opcodes;
@@ -16,8 +16,7 @@ public class ClassInfoCollectAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public void visit(int version, int access, String name, String signature,
-			String superName, String[] interfaces) {
+	public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
 		hotCodeClass.setClassName(name.replace('/', '.'));
 		super.visit(version, access, name, signature, superName, interfaces);
 	}

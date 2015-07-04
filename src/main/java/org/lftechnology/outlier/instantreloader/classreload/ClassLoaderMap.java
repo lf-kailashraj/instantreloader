@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 /**
  * 
@@ -9,8 +9,7 @@ public class ClassLoaderMap {
 	private ClassLoader classLoader;
 	private ClassReloaderManager classReloaderManager;
 
-	public ClassLoaderMap(ClassLoader classLoader,
-			ClassReloaderManager classReloaderManager) {
+	public ClassLoaderMap(ClassLoader classLoader, ClassReloaderManager classReloaderManager) {
 		this.classLoader = classLoader;
 		this.classReloaderManager = classReloaderManager;
 	}

@@ -8,6 +8,8 @@ import java.util.Map;
  * @author frieddust
  *
  */
+import org.lftechnology.outlier.instantreloader.classreload.ClassReloaderManager;
+
 public class Outlier {
 
 	private static Long counter = 0L;
@@ -22,8 +24,7 @@ public class Outlier {
 		return classReloaderManagerMap.get(index);
 	}
 
-	public static Long putClassReloaderManager(ClassLoader classLoader,
-			ClassReloaderManager classReloaderManager) {
+	public static Long putClassReloaderManager(ClassLoader classLoader, ClassReloaderManager classReloaderManager) {
 		counter++;
 		classLoaderIndexMap.put(classLoader, counter);
 		classReloaderManagerMap.put(counter, classReloaderManager);

@@ -1,7 +1,9 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.security.ProtectionDomain;
 
+import org.lftechnology.outlier.instantreloader.InitialClassTransformer;
+import org.lftechnology.outlier.instantreloader.Outlier;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -19,10 +21,8 @@ public class ClassLoaderAdapter extends ClassVisitor {
 	}
 
 	@Override
-	public MethodVisitor visitMethod(int access, String name, String desc,
-			String signature, String[] exceptions) {
-		MethodVisitor methodVisitor = super.visitMethod(access, name, desc,
-				signature, exceptions);
+	public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
+		MethodVisitor methodVisitor = super.visitMethod(access, name, desc, signature, exceptions);
 		if (name.equals("defineClass")
 				&& desc.equals(Type.getMethodDescriptor(
 						Type.getType(Class.class), Type.getType(String.class),

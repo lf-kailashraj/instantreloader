@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;
@@ -19,13 +19,12 @@ public class ClassRedefiner {
 
 	public static void redefine(Class<?> klass, byte[] classFile) {
 		System.out.println("redefine: " + klass.getName());
-		// new Throwable().printStackTrace();
 		try {
 			inst.redefineClasses(new ClassDefinition(klass, classFile));
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.err.println("ClassNotFoundException : " + e);
 		} catch (UnmodifiableClassException e) {
-			e.printStackTrace();
+			System.err.println("UnmodifiableClassException : " + e);
 		}
 	}
 }

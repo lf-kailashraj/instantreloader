@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,6 +8,10 @@ import java.lang.reflect.Method;
  * @author frieddust
  *
  */
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.ClassFile;
+import org.lftechnology.outlier.instantreloader.data.PseudoClass;
+
 public class ClassReloader {
 
 	private Long classReloaderManagerIndex;
@@ -27,8 +31,13 @@ public class ClassReloader {
 	}
 
 	public boolean checkAndReload() {
-		// new Throwable().printStackTrace();
-		return classFile.changed() && reload();
+		try {
+			return classFile.changed() && reload();
+		} catch (Exception ex) {
+			System.err.println("Check and reload");
+			return false;
+		}
+
 	}
 
 	public PseudoClass getOriginClass() {
@@ -56,15 +65,15 @@ public class ClassReloader {
 						.getMethod(Constants.OUTLIER_CLINIT_METHOD_NAME);
 				method.invoke(clazz);
 			} catch (NoSuchMethodException e) {
-				e.printStackTrace();
+				System.err.println("Reload caught");
 			} catch (IllegalAccessException e) {
-				e.printStackTrace();
+				System.err.println("Reload caught");
 			} catch (InvocationTargetException e) {
-				e.printStackTrace();
+				System.err.println("Reload caught");
 			}
 			return true;
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			System.err.println("Reload caught");
 			return false;
 		}
 	}

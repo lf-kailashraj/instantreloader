@@ -2,15 +2,13 @@ package org.lftechnology.outlier.instantreloader.adapter;
 
 import org.apache.commons.lang.StringUtils;
 import org.lftechnology.outlier.instantreloader.AsmInjector;
-import org.lftechnology.outlier.instantreloader.Constants;
-import org.lftechnology.outlier.instantreloader.PseudoMethod;
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.PseudoMethod;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-//Add "<clinit>" to class if not exist, or else transform the "<clinit>" methods. Add all the code in "<clinit>" to
-// Constants#OUTLIER_CLINIT_METHOD_NAME to class reinitialization.
 public class ClinitClassAdapter extends ClassVisitor {
 
 	private PseudoMethod clinitMethod;
@@ -18,8 +16,7 @@ public class ClinitClassAdapter extends ClassVisitor {
 	private Long classReloaderManagerIndex;
 	private Long classReloaderIndex;
 
-	public ClinitClassAdapter(ClassVisitor cv, Long classReloaderManagerIndex,
-			Long classReloaderIndex) {
+	public ClinitClassAdapter(ClassVisitor cv, Long classReloaderManagerIndex, Long classReloaderIndex) {
 		super(Opcodes.ASM4, cv);
 		this.classReloaderManagerIndex = classReloaderManagerIndex;
 		this.classReloaderIndex = classReloaderIndex;
