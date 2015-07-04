@@ -2,7 +2,7 @@ package org.lftechnology.outlier.instantreloader.adapter;
 
 import java.lang.reflect.Modifier;
 
-import org.lftechnology.outlier.instantreloader.ClassReloader;
+import org.lftechnology.outlier.instantreloader.classreload.ClassReloader;
 import org.lftechnology.outlier.instantreloader.constants.Constants;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;

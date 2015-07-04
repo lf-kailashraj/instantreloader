@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 public class ClassLoaderMap {
 	private ClassLoader classLoader;

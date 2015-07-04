@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import org.lftechnology.outlier.instantreloader.adapter.AddClassReloaderAdapter;
 import org.lftechnology.outlier.instantreloader.adapter.AddFieldsHolderAdapter;

@@ -3,6 +3,8 @@ package org.lftechnology.outlier.instantreloader;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.lftechnology.outlier.instantreloader.classreload.ClassReloaderManager;
+
 public class Outlier {
 
 	private static Long counter = 0L;

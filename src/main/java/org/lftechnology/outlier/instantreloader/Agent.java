@@ -8,6 +8,8 @@ import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 
 import org.apache.commons.io.IOUtils;
+import org.lftechnology.outlier.instantreloader.classreload.ClassLoaderAdapter;
+import org.lftechnology.outlier.instantreloader.classreload.ClassRedefiner;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;

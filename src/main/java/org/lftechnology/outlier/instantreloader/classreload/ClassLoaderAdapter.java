@@ -1,7 +1,9 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.security.ProtectionDomain;
 
+import org.lftechnology.outlier.instantreloader.InitialClassTransformer;
+import org.lftechnology.outlier.instantreloader.Outlier;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;

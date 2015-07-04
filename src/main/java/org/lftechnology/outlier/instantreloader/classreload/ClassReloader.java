@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
