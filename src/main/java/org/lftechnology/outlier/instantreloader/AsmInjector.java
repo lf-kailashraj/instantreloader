@@ -35,8 +35,6 @@ public class AsmInjector {
 				Type.getDescriptor(ClassReloader.class));
 	}
 
-	// Insert this code fragment at the start of a method, so it can check the
-	// update of a class file before every method invoke.
 	public static void beforeMethodCheck(MethodVisitor mv, int methodAccess,
 			String methodName, String methodDesc, String ownerClassInternalName) {
 		GeneratorAdapter ga = new GeneratorAdapter(mv, methodAccess,
