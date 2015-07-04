@@ -16,7 +16,7 @@ public class FileUtilsTest {
 	@Test
 	public void testGetFileBytes() throws Exception{
 		//given
-		File file = new File("/home/anish/Development/integration-api-servers/integration-api/RUNNING.txt");
+		File file = new File(Thread.currentThread().getContextClassLoader().getResource("reload.properties").getPath());
 		
 		//when
 		byte[] resultBytes = FileUtils.getFileBytes(file);
