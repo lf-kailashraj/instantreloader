@@ -1,8 +1,8 @@
 package org.lftechnology.outlier.instantreloader.adapter;
 
 import org.lftechnology.outlier.instantreloader.AsmInjector;
-import org.lftechnology.outlier.instantreloader.Outlier;
 import org.lftechnology.outlier.instantreloader.PseudoField;
+import org.lftechnology.outlier.instantreloader.classreload.ClassManager;
 import org.lftechnology.outlier.instantreloader.classreload.ClassReloader;
 import org.lftechnology.outlier.instantreloader.classreload.ClassReloaderManager;
 import org.lftechnology.outlier.instantreloader.constants.Constants;
@@ -23,7 +23,7 @@ public class FieldTransformAdapter extends ClassVisitor {
 
 	public FieldTransformAdapter(ClassVisitor cv,long classReloaderManagerIndex, long classReloaderIndex) {
 		super(Opcodes.ASM4, cv);
-		classReloaderManager = Outlier
+		classReloaderManager = ClassManager
 				.getClassReloaderManager(classReloaderManagerIndex);
 		classReloader = classReloaderManager
 				.getClassReloader(classReloaderIndex);

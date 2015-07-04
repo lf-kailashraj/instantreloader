@@ -3,7 +3,6 @@ package org.lftechnology.outlier.instantreloader.classreload;
 import java.security.ProtectionDomain;
 
 import org.lftechnology.outlier.instantreloader.InitialClassTransformer;
-import org.lftechnology.outlier.instantreloader.Outlier;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -34,7 +33,7 @@ public class ClassLoaderAdapter extends ClassVisitor {
 				public void visitCode() {
 					mv.visitVarInsn(Opcodes.ALOAD, 0);
 					mv.visitMethodInsn(Opcodes.INVOKESTATIC,
-							Type.getInternalName(Outlier.class),
+							Type.getInternalName(ClassManager.class),
 							"addClassLoader", "(Ljava/lang/ClassLoader;)V");
 					mv.visitVarInsn(Opcodes.ALOAD, 1);
 					mv.visitVarInsn(Opcodes.ALOAD, 0);

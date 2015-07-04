@@ -9,6 +9,7 @@ import org.lftechnology.outlier.instantreloader.adapter.BeforeMethodCheckAdapter
 import org.lftechnology.outlier.instantreloader.adapter.ClassInfoCollectAdapter;
 import org.lftechnology.outlier.instantreloader.adapter.ClinitClassAdapter;
 import org.lftechnology.outlier.instantreloader.adapter.FieldReorderAdapter;
+import org.lftechnology.outlier.instantreloader.classreload.ClassManager;
 import org.lftechnology.outlier.instantreloader.classreload.ClassReloader;
 import org.lftechnology.outlier.instantreloader.classreload.ClassReloaderManager;
 import org.lftechnology.outlier.instantreloader.data.ClassFile;
@@ -36,13 +37,13 @@ public class InitialClassTransformer {
 			}
 		}
 
-		Long classReloaderManagerIndex = Outlier.getIndex(classLoader);
+		Long classReloaderManagerIndex = ClassManager.getIndex(classLoader);
 
 		if (classReloaderManagerIndex == null) {
-			classReloaderManagerIndex = Outlier.putClassReloaderManager(classLoader, new ClassReloaderManager(classLoader));
+			classReloaderManagerIndex = ClassManager.putClassReloaderManager(classLoader, new ClassReloaderManager(classLoader));
 		}
 
-		ClassReloaderManager classReloaderManager = Outlier.getClassReloaderManager(classReloaderManagerIndex);
+		ClassReloaderManager classReloaderManager = ClassManager.getClassReloaderManager(classReloaderManagerIndex);
 
 		Long classReloaderIndex = classReloaderManager.getIndex(className
 				.replace('.', '/'));

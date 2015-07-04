@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.classreload;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,9 +8,14 @@ import java.util.Map;
  * @author frieddust
  *
  */
-import org.lftechnology.outlier.instantreloader.classreload.ClassReloaderManager;
 
-public class Outlier {
+/**
+ * <p>This class maps relation between class and {@link ClassLoader}</p>
+ * 
+ * @author anish
+ *
+ */
+public class ClassManager {
 
 	private static Long counter = 0L;
 	private static Map<ClassLoader, Long> classLoaderIndexMap = new HashMap<ClassLoader, Long>();
