@@ -13,6 +13,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.commons.GeneratorAdapter;
 
 /**
+ * <p>A Utility class that injects byte code with the help of ASM lib</p>
  * 
  * @author frieddust
  *

@@ -18,6 +18,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
 /**
+ * <p>Any class that is loaded by jvm is passed through this class's transform method.</p>
  * 
  * @author frieddust
  *

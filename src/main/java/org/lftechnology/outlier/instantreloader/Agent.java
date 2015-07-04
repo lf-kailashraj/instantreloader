@@ -16,26 +16,34 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Type;
 
 /**
+ * <p>
+ * Main file which is set in MANIFEST.MF on which pre-main is invoked by JVM
+ * before any class is loaded
+ * </p>
  * 
  * @author frieddust
  *
  */
 public class Agent {
-	
+
 	public static void premain(String agentArgs, Instrumentation inst) {
-		
+
 		ClassRedefiner.setInstrumentation(inst);
 
-		InputStream is = ClassLoader.getSystemResourceAsStream(Type.getInternalName(ClassLoader.class) + ".class");
+		InputStream is = ClassLoader.getSystemResourceAsStream(Type
+				.getInternalName(ClassLoader.class) + ".class");
 
 		try {
-			ClassReader classReader = new ClassReader(IOUtils.toByteArray(new BufferedInputStream(is)));
-			ClassWriter classWriter = new ClassWriter(classReader, ClassWriter.COMPUTE_MAXS + ClassWriter.COMPUTE_FRAMES);
+			ClassReader classReader = new ClassReader(
+					IOUtils.toByteArray(new BufferedInputStream(is)));
+			ClassWriter classWriter = new ClassWriter(classReader,
+					ClassWriter.COMPUTE_MAXS + ClassWriter.COMPUTE_FRAMES);
 			ClassVisitor cv = new ClassLoaderAdapter(classWriter);
 			classReader.accept(cv, 0);
 			byte[] transformedByte = classWriter.toByteArray();
 
-			ClassDefinition classDefinition = new ClassDefinition(ClassLoader.class, transformedByte);
+			ClassDefinition classDefinition = new ClassDefinition(
+					ClassLoader.class, transformedByte);
 
 			try {
 				inst.redefineClasses(classDefinition);
