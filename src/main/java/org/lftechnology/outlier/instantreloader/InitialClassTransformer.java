@@ -9,6 +9,8 @@ import org.lftechnology.outlier.instantreloader.adapter.BeforeMethodCheckAdapter
 import org.lftechnology.outlier.instantreloader.adapter.ClassInfoCollectAdapter;
 import org.lftechnology.outlier.instantreloader.adapter.ClinitClassAdapter;
 import org.lftechnology.outlier.instantreloader.adapter.FieldReorderAdapter;
+import org.lftechnology.outlier.instantreloader.data.ClassFile;
+import org.lftechnology.outlier.instantreloader.data.PseudoClass;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;

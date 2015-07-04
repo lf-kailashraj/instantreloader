@@ -1,4 +1,4 @@
-package org.lftechnology.outlier.instantreloader;
+package org.lftechnology.outlier.instantreloader.constants;
 
 import java.util.HashSet;
 import java.util.Set;

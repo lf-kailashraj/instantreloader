@@ -1,6 +1,7 @@
 package org.lftechnology.outlier.instantreloader;
 
 import org.apache.commons.lang.StringUtils;
+import org.lftechnology.outlier.instantreloader.constants.Constants;
 
 public class PseudoField implements java.lang.Comparable {
 

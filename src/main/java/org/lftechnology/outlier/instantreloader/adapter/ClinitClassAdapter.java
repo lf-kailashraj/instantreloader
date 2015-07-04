@@ -2,8 +2,8 @@ package org.lftechnology.outlier.instantreloader.adapter;
 
 import org.apache.commons.lang.StringUtils;
 import org.lftechnology.outlier.instantreloader.AsmInjector;
-import org.lftechnology.outlier.instantreloader.Constants;
-import org.lftechnology.outlier.instantreloader.PseudoMethod;
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.PseudoMethod;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;

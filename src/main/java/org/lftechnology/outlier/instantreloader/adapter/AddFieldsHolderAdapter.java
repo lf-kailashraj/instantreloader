@@ -2,8 +2,8 @@ package org.lftechnology.outlier.instantreloader.adapter;
 
 import java.lang.reflect.Modifier;
 
-import org.lftechnology.outlier.instantreloader.Constants;
-import org.lftechnology.outlier.instantreloader.FieldsHolder;
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.FieldsHolder;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;

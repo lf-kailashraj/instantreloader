@@ -1,7 +1,7 @@
 package org.lftechnology.outlier.instantreloader.adapter;
 
-import org.lftechnology.outlier.instantreloader.PseudoClass;
 import org.lftechnology.outlier.instantreloader.PseudoField;
+import org.lftechnology.outlier.instantreloader.data.PseudoClass;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Opcodes;

@@ -3,6 +3,10 @@ package org.lftechnology.outlier.instantreloader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import org.lftechnology.outlier.instantreloader.constants.Constants;
+import org.lftechnology.outlier.instantreloader.data.ClassFile;
+import org.lftechnology.outlier.instantreloader.data.PseudoClass;
+
 public class ClassReloader {
 
 	private Long classReloaderManagerIndex;
