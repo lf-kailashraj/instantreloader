@@ -8,6 +8,11 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
+/**
+ * 
+ * @author anish
+ *
+ */
 public class AddFieldsHolderAdapter extends ClassVisitor {
 
 	public AddFieldsHolderAdapter(ClassVisitor cv) {

@@ -6,6 +6,11 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Opcodes;
 
+/**
+ * 
+ * @author anish
+ *
+ */
 public class ClassInfoCollectAdapter extends ClassVisitor {
 
 	private PseudoClass hotCodeClass;

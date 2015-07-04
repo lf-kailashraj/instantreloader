@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.lftechnology.outlier.instantreloader.constants.Constants;
 
 /**
+ * Contains field informations being added/changed
  * 
  * @author frieddust
  *

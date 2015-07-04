@@ -8,6 +8,11 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
+/**
+ * 
+ * @author anish
+ *
+ */
 public class AddClassReloaderAdapter extends ClassVisitor {
 
 	public AddClassReloaderAdapter(ClassVisitor cv) {

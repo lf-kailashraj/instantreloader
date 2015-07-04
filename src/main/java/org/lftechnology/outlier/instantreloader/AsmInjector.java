@@ -21,6 +21,13 @@ import org.objectweb.asm.commons.GeneratorAdapter;
  */
 public class AsmInjector {
 
+	/**
+	 * 
+	 * @param mv
+	 * @param ownerClassInternalName
+	 * @param classReloaderManagerIndex
+	 * @param classReloaderIndex
+	 */
 	public static void clinitFieldInit(MethodVisitor mv,String ownerClassInternalName, Long classReloaderManagerIndex, Long classReloaderIndex) {
 		mv.visitTypeInsn(Opcodes.NEW, Type.getInternalName(FieldsHolder.class));
 		mv.visitInsn(Opcodes.DUP);
@@ -38,6 +45,14 @@ public class AsmInjector {
 		mv.visitFieldInsn(Opcodes.PUTSTATIC, ownerClassInternalName, Constants.OUTLIER_CLASS_RELOADER_FIELDS,Type.getDescriptor(ClassReloader.class));
 	}
 
+	/**
+	 * 
+	 * @param mv
+	 * @param methodAccess
+	 * @param methodName
+	 * @param methodDesc
+	 * @param ownerClassInternalName
+	 */
 	public static void beforeMethodCheck(MethodVisitor mv, int methodAccess, String methodName, String methodDesc, String ownerClassInternalName) {
 		GeneratorAdapter ga = new GeneratorAdapter(mv, methodAccess, methodName, methodDesc);
 		Label label = new Label();
@@ -56,6 +71,11 @@ public class AsmInjector {
 		ga.visitLabel(label);
 	}
 
+	/**
+	 * 
+	 * @param mv
+	 * @param fieldOwner
+	 */
 	public static void initHotCodeInstanceFieldIfNull(MethodVisitor mv,	String fieldOwner) {
 		mv.visitFieldInsn(Opcodes.GETFIELD, fieldOwner, Constants.OUTLIER_INSTANCE_FIELDS, Type.getDescriptor(FieldsHolder.class));
 		Label label = new Label();

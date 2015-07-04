@@ -19,7 +19,10 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
 /**
- * <p>Any class that is loaded by jvm is passed through this class's transform method.</p>
+ * <p>
+ * Any class that is loaded by jvm is passed through this class's transform
+ * method.
+ * </p>
  * 
  * @author frieddust
  *
@@ -28,6 +31,14 @@ public class InitialClassTransformer {
 
 	private static final String[] IGNORE_PACKAGE = { "java", "sun" };
 
+	/**
+	 * The implementation of this method transform the supplied class file and
+     * return a new replacement class file.
+	 * @param className
+	 * @param classLoader
+	 * @param classfileBuffer
+	 * @return
+	 */
 	public static byte[] transform(String className, ClassLoader classLoader,
 			byte[] classfileBuffer) {
 		System.out.println("NEW LOAD " + className);
@@ -40,15 +51,18 @@ public class InitialClassTransformer {
 		Long classReloaderManagerIndex = ClassManager.getIndex(classLoader);
 
 		if (classReloaderManagerIndex == null) {
-			classReloaderManagerIndex = ClassManager.putClassReloaderManager(classLoader, new ClassReloaderManager(classLoader));
+			classReloaderManagerIndex = ClassManager.putClassReloaderManager(
+					classLoader, new ClassReloaderManager(classLoader));
 		}
 
-		ClassReloaderManager classReloaderManager = ClassManager.getClassReloaderManager(classReloaderManagerIndex);
+		ClassReloaderManager classReloaderManager = ClassManager
+				.getClassReloaderManager(classReloaderManagerIndex);
 
 		Long classReloaderIndex = classReloaderManager.getIndex(className
 				.replace('.', '/'));
 
-		URL classFileURL = classLoader.getResource(className.replace('.', '/')+ ".class");
+		URL classFileURL = classLoader.getResource(className.replace('.', '/')
+				+ ".class");
 		File classFile = new File(classFileURL.getFile());
 
 		if (!classFile.exists()) {
@@ -61,16 +75,20 @@ public class InitialClassTransformer {
 
 		if (classReloaderIndex == null) {
 			classReloaderIndex = classReloaderManager.getNextAvailableIndex();
-			classReloaderManager.putClassReloader(classReloaderIndex, className.replace('.', '/'), new ClassReloader(
-					classReloaderManagerIndex, classReloaderIndex, fileSystemVersionedClassFile, pseudoClass, classLoader));
+			classReloaderManager.putClassReloader(classReloaderIndex, className
+					.replace('.', '/'), new ClassReloader(
+					classReloaderManagerIndex, classReloaderIndex,
+					fileSystemVersionedClassFile, pseudoClass, classLoader));
 		}
 
-		ClassReader cr = new ClassReader(classfileBuffer); 
-		ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS + ClassWriter.COMPUTE_FRAMES);
+		ClassReader cr = new ClassReader(classfileBuffer);
+		ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS
+				+ ClassWriter.COMPUTE_FRAMES);
 		ClassVisitor cv = new AddFieldsHolderAdapter(cw);
 		cv = new AddClassReloaderAdapter(cv);
 		cv = new FieldReorderAdapter(pseudoClass, cv);
-		cv = new ClinitClassAdapter(cv, classReloaderManagerIndex, classReloaderIndex);
+		cv = new ClinitClassAdapter(cv, classReloaderManagerIndex,
+				classReloaderIndex);
 		cv = new BeforeMethodCheckAdapter(cv);
 		cv = new ClassInfoCollectAdapter(cv, pseudoClass);
 		cr.accept(cv, 0);

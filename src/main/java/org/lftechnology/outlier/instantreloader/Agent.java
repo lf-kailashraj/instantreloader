@@ -26,6 +26,11 @@ import org.objectweb.asm.Type;
  */
 public class Agent {
 
+	/**
+	 * <p>The first method JVM attempts to invoke on the agent class</p>
+	 * @param agentArgs
+	 * @param inst
+	 */
 	public static void premain(String agentArgs, Instrumentation inst) {
 
 		ClassRedefiner.setInstrumentation(inst);
